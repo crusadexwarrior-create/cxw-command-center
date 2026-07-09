@@ -1,5 +1,30 @@
 # Changelog — decision record (newest first)
 
+## 2026-07-09 — Site deployed live at commandcenter.cxw-agency.org
+Pushed the local repo to GitHub (crusadexwarrior-create/cxw-command-center,
+branch main). Created a new, separate Cloudflare Pages project from that repo
+(Framework: None, build command blank, output /) — fully isolated from the
+agency site's Pages project. Verified the default cxw-command-center.pages.dev
+URL loaded correctly, then attached a custom domain.
+
+Correction during setup: the original plan (and DEPLOYMENT.md) referenced
+commandcenter.cxwagency.com, but the user confirmed the real, live agency
+domain is cxw-agency.org (a different Cloudflare account/zone than the one
+hosting this Pages project). Added a CNAME (commandcenter -> cxw-command-
+center.pages.dev, proxied) directly in the cxw-agency.org zone — avoided the
+"transfer DNS to Cloudflare" option since that domain was already on
+Cloudflare and transferring could have disrupted the live agency site. First
+custom-domain attempt was pointed at the wrong .com and stuck on "Inactive";
+removed it and re-added commandcenter.cxw-agency.org, which verified as
+Active within minutes since the DNS record already existed.
+
+Live and verified: https://commandcenter.cxw-agency.org loads over HTTPS,
+all pages navigate correctly. Confirmed no other records in the cxw-agency.org
+zone (root domain, MX, mail, app subdomain) were touched. DEPLOYMENT.md
+updated to reflect the correct domain and mark all technical deployment steps
+complete — only content placeholders (GHL endpoints, social/platform links,
+real episodes/guests/blog/bio) remain before a full public launch.
+
 ## 2026-07-09 — Deployment preparation: standalone Cloudflare Pages project
 Audited the project for standalone deployment as its own Cloudflare Pages
 project at commandcenter.cxwagency.com — technically isolated from the CXW

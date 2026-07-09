@@ -5,8 +5,12 @@ technically isolated from the CXW Agency website. The only connection between
 the two brands is links, CTAs, and shared brand language — never shared code,
 shared repo, or shared deploy pipeline.
 
-**Target URL:** `commandcenter.cxwagency.com`
+**Live URL:** `https://commandcenter.cxw-agency.org` ✅ **DEPLOYED AND ACTIVE** (2026-07-09)
 **Not:** `cxwagency.com/podcast` (path-based deployment is explicitly rejected)
+
+> Note: the original plan referenced `commandcenter.cxwagency.com`, but the
+> real, live CXW Agency domain is `cxw-agency.org` (confirmed with the user
+> during deployment). All references below use the correct `.org` domain.
 
 ---
 
@@ -17,7 +21,7 @@ Reviewed 2026-07-09. Findings:
 | Check | Result |
 |---|---|
 | Own dedicated folder | ✅ `C:\Users\sdave\CXW.Command.Center.Podcast` — no files shared with any agency-site folder |
-| Git repo status | Not yet initialized (expected — see Section 3) |
+| Git repo status | ✅ Initialized, committed, pushed to `crusadexwarrior-create/cxw-command-center` on GitHub |
 | Internal `.html` links | ✅ All relative (`episodes.html`, `about.html`, etc.) — zero absolute (`href="/..."`) paths |
 | Every internal link resolves | ✅ All 6 pages verified present: index, episodes, guest-spotlight, blog, about, be-featured |
 | Hardcoded references to `cxwagency.com` or agency-site files | ✅ None found |
@@ -69,72 +73,63 @@ Present in the header socials area, hero platform badges, and footer of all 6 pa
 
 ---
 
-## 3. GitHub Repo Setup
+## 3. GitHub Repo Setup ✅ DONE
 
-This folder is not yet a git repo. To prepare it:
+Repo: [github.com/crusadexwarrior-create/cxw-command-center](https://github.com/crusadexwarrior-create/cxw-command-center)
+Branch `main`, tracking `origin/main`. Separate from the agency-site repo, as required.
 
+`.gitignore` is in place (`node_modules/`, `.DS_Store`, `Thumbs.db`, `*.log`, `.env`).
+
+For future updates:
 ```bash
 cd "C:\Users\sdave\CXW.Command.Center.Podcast"
-git init
-git config user.name "CrusadeXWarrior"
-git config user.email "crusadexwarrior@gmail.com"
 git add .
-git commit -m "Initial commit — CXW Command Center podcast website"
+git commit -m "Describe the change"
+git push
 ```
-
-Create a **new, separate** GitHub repo (do not add this as a folder inside the existing agency-site repo):
-
-```bash
-git remote add origin https://github.com/crusadexwarrior-create/cxw-command-center.git
-git branch -M main
-git push -u origin main
-```
-
-`.gitignore` is already in place (`node_modules/`, `.DS_Store`, `Thumbs.db`, `*.log`, `.env`).
+Cloudflare Pages auto-deploys on every push to `main` (usually live within ~30-60 seconds).
 
 ---
 
-## 4. Cloudflare Pages Deployment Checklist
+## 4. Cloudflare Pages Deployment ✅ DONE
 
-Deploy as a **new, separate Cloudflare Pages project** — do not add this as a route or path on the existing CXW Agency Pages project.
+Deployed as its own, separate Cloudflare Pages project: **`cxw-command-center`**
+(project source: `crusadexwarrior-create/cxw-command-center`, branch `main`).
+Default URL: `cxw-command-center.pages.dev` — confirmed working before the
+custom domain was attached.
 
-- [ ] Go to https://dash.cloudflare.com → **Workers & Pages**
-- [ ] Click **Create** → click **"Looking to deploy Pages? Get started"** (do NOT create a Worker)
-- [ ] **Connect to Git** → select the `cxw-command-center` repo (not the agency repo)
-- [ ] Build settings:
-  - Framework preset: **None**
-  - Build command: *(leave blank)*
-  - Build output directory: `/`
-- [ ] **Save and Deploy** — wait for the initial build (usually under 60 seconds)
-- [ ] Confirm the default `*.pages.dev` URL loads all 6 pages correctly before attaching the custom subdomain
-
-This creates a project fully independent from the agency site's Pages project. Redeploys of one never touch the other — separate repo, separate Pages project, separate build.
+Build settings used: Framework preset **None**, build command blank, output
+directory `/`. This project is fully independent from the agency site's
+Pages project(s) — separate repo, separate build, separate deploy history.
 
 ---
 
-## 5. Connecting the Subdomain — `commandcenter.cxwagency.com`
+## 5. Subdomain — `commandcenter.cxw-agency.org` ✅ DONE
 
-Do in this order, in the **new** podcast Pages project (not the agency one):
+Live and active as of 2026-07-09. Setup notes for reference:
 
-1. In the podcast Cloudflare Pages project → **Custom domains** tab
-2. Click **Set up a custom domain**
-3. Enter `commandcenter.cxwagency.com`
-4. Since `cxwagency.com` is presumably already on Cloudflare DNS (used by the agency site), Cloudflare will offer to auto-create the CNAME record for this subdomain — confirm/apply it
-5. SSL activates automatically once the DNS record resolves
-6. "Verifying" status is normal and typically clears in a few minutes
-
-**Important:** this only adds a new subdomain record. It does not touch the existing `cxwagency.com` (root) or `www.cxwagency.com` records used by the agency site — those stay exactly as they are. No DNS changes are made here without your explicit go-ahead; this section documents the steps for you to run, or to approve before I run them.
+- The agency's real domain is `cxw-agency.org` (Cloudflare zone, DNS Setup: Full), under a **different Cloudflare account/login** than the one hosting the `cxw-command-center` Pages project.
+- CNAME record added directly in that zone (not via "transfer DNS to Cloudflare" — that option is only for domains not yet on Cloudflare, and would have been the wrong, risky choice here):
+  ```
+  Type: CNAME
+  Name: commandcenter
+  Target: cxw-command-center.pages.dev
+  Proxy status: Proxied
+  ```
+- In the `cxw-command-center` Pages project → Custom domains, the entry is `commandcenter.cxw-agency.org`, status **Active**.
+- Confirmed: this only added the new `commandcenter` record. The existing `cxw-agency.org` root record (→ `cxw-agency-v2.pages.dev`) and all other existing records (MX, mail, app subdomain, etc.) were untouched.
+- HTTPS confirmed working, all pages load correctly on the live domain.
 
 ---
 
 ## 6. Final Pre-Launch Checklist
 
-**Technical (can do now):**
-- [ ] `git init` + push to a new, separate GitHub repo (Section 3)
-- [ ] Create new Cloudflare Pages project from that repo (Section 4)
-- [ ] Verify `*.pages.dev` URL loads correctly
-- [ ] Attach `commandcenter.cxwagency.com` custom domain (Section 5)
-- [ ] Confirm SSL is active on the subdomain
+**Technical — ✅ all done, site is live:**
+- [x] `git init` + push to a new, separate GitHub repo (Section 3)
+- [x] Create new Cloudflare Pages project from that repo (Section 4)
+- [x] Verify `*.pages.dev` URL loads correctly
+- [x] Attach `commandcenter.cxw-agency.org` custom domain (Section 5)
+- [x] Confirm SSL is active on the subdomain — confirmed, HTTPS working
 
 **Content (blocks a real launch, not a technical deploy):**
 - [ ] Wire all 7 `data-ghl-endpoint` values to real GHL forms
@@ -145,6 +140,6 @@ Do in this order, in the **new** podcast Pages project (not the agency one):
 - [ ] Publish first 1-3 real blog posts
 - [ ] (Optional) export a transparent-background logo to replace the screen-blend workaround
 
-**Confirm isolation before going live:**
-- [ ] Verify agency site is unaffected — different repo, different Pages project, different subdomain
-- [ ] Confirm no shared build step or shared DNS record was modified beyond the new `commandcenter` CNAME
+**Confirm isolation — ✅ verified:**
+- [x] Agency site unaffected — different repo, different Pages project, different DNS record
+- [x] No shared build step; the only DNS change was adding the new `commandcenter` CNAME to the existing `cxw-agency.org` zone — no other records touched
