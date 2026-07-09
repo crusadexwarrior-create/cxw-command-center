@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- GUEST SPOTLIGHT TEMPLATE — duplicate this file per guest (e.g. guests/first-last.html)
+       and replace every [PLACEHOLDER]. Update the <title>, meta, and links to the real guest. -->
+  <title>Guest Spotlight — CXW Command Center</title>
+  <meta name="description" content="Guest spotlight on CXW Command Center. Real stories, real systems, real proof from the builders in the seat.">
+  <meta property="og:title" content="Guest Spotlight — CXW Command Center">
+  <meta property="og:description" content="Real stories, real systems, real proof.">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="assets/logo.png">
+  <link rel="icon" type="image/png" href="assets/logo-mark.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="container header__inner">
+      <a href="index.html" class="header__logo" aria-label="CXW Command Center home">
+        <img src="assets/logo.png" alt="CXW Command Center logo">
+      </a>
+      <nav class="nav" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="episodes.html">Episodes</a>
+        <a href="guest-spotlight.html" aria-current="page">Guests</a>
+        <a href="blog.html">Blog</a>
+        <a href="about.html">About</a>
+      </nav>
+      <div style="display:flex; gap:10px; align-items:center;">
+        <a href="be-featured.html" class="btn btn--primary header__cta">Be Featured</a>
+        <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="mobileNav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile">
+      <a href="index.html">Home</a>
+      <a href="episodes.html">Episodes</a>
+      <a href="guest-spotlight.html" aria-current="page">Guests</a>
+      <a href="blog.html">Blog</a>
+      <a href="about.html">About</a>
+      <a href="be-featured.html">Be Featured</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="page-hero">
+      <div class="container">
+        <div class="page-hero__mark"><img src="assets/logo-mark.png" alt="CXW Command Center emblem"></div>
+        <span class="eyebrow">Guest Spotlight</span>
+        <h1>The Builders in the Seat</h1>
+        <p class="lead">This is the reusable spotlight template. Every guest gets a page like this — built to be shared. The layout below shows what each guest page contains.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+
+        <!-- PROFILE HEADER -->
+        <div class="spotlight__header reveal">
+          <div class="spotlight__photo">
+            <div class="placeholder-media">PHOTO: Guest headshot</div>
+          </div>
+          <div class="spotlight__meta">
+            <span class="card__tag">Entrepreneurship</span>
+            <h1>[Guest Name]</h1>
+            <p class="spotlight__biz">[Business / Organization]</p>
+            <div class="spotlight__links">
+              <!-- TODO: replace # with the guest's real links -->
+              <a href="#" class="btn btn--secondary" target="_blank" rel="noopener noreferrer">Website</a>
+              <a href="#" class="btn btn--secondary" target="_blank" rel="noopener noreferrer">Instagram</a>
+              <a href="#" class="btn btn--secondary" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="spotlight__body reveal">
+          <!-- EPISODE EMBED -->
+          <h2>The Episode</h2>
+          <!-- TODO: paste the YouTube/Spotify embed iframe in place of this placeholder. -->
+          <div class="embed-placeholder placeholder-media">EPISODE EMBED: paste YouTube / Spotify player here</div>
+
+          <!-- MAIN STORY -->
+          <h2>The Story</h2>
+          <p>[Guest name]'s story in two or three paragraphs. What they built, where they started, and the turning point that makes this conversation worth a listener's time. Written after the interview, approved by the guest.</p>
+
+          <!-- KEY LESSONS -->
+          <h2>Key Lessons</h2>
+          <ul class="lessons">
+            <li>[Lesson one — a specific, usable takeaway from the conversation.]</li>
+            <li>[Lesson two — a system, decision, or mindset the guest lives by.]</li>
+            <li>[Lesson three — the proof: a number, a result, or a milestone.]</li>
+          </ul>
+
+          <!-- QUOTE / TAKEAWAY -->
+          <blockquote class="pullquote">"[The most shareable line from the episode goes here.]"</blockquote>
+
+          <!-- CTA -->
+          <div class="section__actions">
+            <a href="#newsletter" class="btn btn--primary">Subscribe to the Command Brief</a>
+            <a href="be-featured.html" class="btn btn--secondary">Apply to Be Featured</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="newsletter section" id="newsletter">
+      <div class="container">
+        <span class="eyebrow">The Command Brief</span>
+        <h2>Get the Command Brief</h2>
+        <p>One email a week. Podcast takeaways, AI business plays, and lessons from entrepreneurs who execute. No spam. No filler.</p>
+        <form class="newsletter__form ghl-form" id="newsletterForm" data-ghl-endpoint="" data-msg="newsletterMsg" data-success="You are in. Welcome to the Command Brief." novalidate>
+          <input type="text" name="first_name" placeholder="First name" required autocomplete="given-name">
+          <input type="email" name="email" placeholder="Email address" required autocomplete="email">
+          <button type="submit" class="btn btn--primary">Join Free</button>
+        </form>
+        <p class="form-note">Unsubscribe anytime. We respect the inbox.</p>
+        <p class="form-msg" id="newsletterMsg" role="status"></p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__logo">
+          <img src="assets/logo.png" alt="CXW Command Center logo">
+          <p style="font-size:0.9rem; max-width:280px;">The media arm of the CXW ecosystem. Business, systems, discipline, and faith — with proof.</p>
+        </div>
+        <div>
+          <h4>Site</h4>
+          <ul>
+            <li><a href="episodes.html">Episodes</a></li>
+            <li><a href="guest-spotlight.html">Guests</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="be-featured.html">Be Featured</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Listen</h4>
+          <ul>
+            <!-- TODO: real platform URLs -->
+            <li><a href="#" target="_blank" rel="noopener noreferrer">Spotify</a></li>
+            <li><a href="#" target="_blank" rel="noopener noreferrer">Apple Podcasts</a></li>
+            <li><a href="#" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Connect</h4>
+          <ul>
+            <!-- TODO: real social + contact links -->
+            <li><a href="#" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+            <li><a href="#" target="_blank" rel="noopener noreferrer">X / Twitter</a></li>
+            <li><a href="mailto:crusadexwarrior@gmail.com">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; 2026 CXW Command Center. All rights reserved.</span>
+        <p class="footer__credit">
+          Website designed by <a href="https://crusadexwarrior.com" target="_blank" rel="noopener noreferrer" class="footer__credit-link">CrusadeXWarrior</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

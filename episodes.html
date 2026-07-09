@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Podcast Episodes — CXW Command Center</title>
+  <meta name="description" content="Every episode of CXW Command Center. Entrepreneurs, creators, and leaders on business, AI leverage, and discipline.">
+  <meta property="og:title" content="Podcast Episodes — CXW Command Center">
+  <meta property="og:description" content="Interviews and playbooks from builders who execute.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/logo.png">
+  <link rel="icon" type="image/png" href="assets/logo-mark.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="container header__inner">
+      <a href="index.html" class="header__logo" aria-label="CXW Command Center home">
+        <img src="assets/logo.png" alt="CXW Command Center logo">
+      </a>
+      <nav class="nav" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="episodes.html" aria-current="page">Episodes</a>
+        <a href="guest-spotlight.html">Guests</a>
+        <a href="blog.html">Blog</a>
+        <a href="about.html">About</a>
+      </nav>
+      <div style="display:flex; gap:10px; align-items:center;">
+        <a href="be-featured.html" class="btn btn--primary header__cta">Be Featured</a>
+        <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="mobileNav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile">
+      <a href="index.html">Home</a>
+      <a href="episodes.html" aria-current="page">Episodes</a>
+      <a href="guest-spotlight.html">Guests</a>
+      <a href="blog.html">Blog</a>
+      <a href="about.html">About</a>
+      <a href="be-featured.html">Be Featured</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="page-hero">
+      <div class="container">
+        <div class="page-hero__mark"><img src="assets/logo-mark.png" alt="CXW Command Center emblem"></div>
+        <span class="eyebrow">Episodes</span>
+        <h1>The Command Center Archive</h1>
+        <p class="lead">Interviews and playbooks from entrepreneurs, creators, and operators who build with proof. New episodes on the way.</p>
+        <div class="page-hero__ctas">
+          <a href="be-featured.html" class="btn btn--primary">Apply to Be Featured</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- EPISODE ARCHIVE -->
+    <section class="section">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow">All Episodes</span>
+          <h2>Coming Soon</h2>
+        </div>
+
+        <!--
+          EPISODE CARD TEMPLATE — copy this block per real episode and fill in.
+          Replace href="#" with the real YouTube / Spotify / Apple URLs.
+          <article class="card reveal">
+            <div class="card__media"><img src="assets/episodes/ep-01.jpg" alt="Episode 1 thumbnail"></div>
+            <div class="card__body">
+              <span class="card__tag">Entrepreneurship</span>            EPISODE CATEGORY
+              <h3>Episode Title Goes Here</h3>                              EPISODE TITLE
+              <p class="form-note">Ep 01 · Guest Name · Jan 1, 2026</p>     NUMBER / GUEST / DATE
+              <p>Short episode description in one or two sentences.</p>      DESCRIPTION
+              <div class="card__actions">
+                <a href="#" class="btn btn--primary" target="_blank" rel="noopener noreferrer">Watch</a>
+                <a href="#" class="btn btn--secondary" target="_blank" rel="noopener noreferrer">Spotify</a>
+                <a href="#" class="btn btn--secondary" target="_blank" rel="noopener noreferrer">Apple</a>
+              </div>
+            </div>
+          </article>
+        -->
+
+        <div class="grid-3">
+          <article class="card reveal">
+            <div class="card__media"><div class="placeholder-media">Episode thumbnail<br>coming soon</div></div>
+            <div class="card__body">
+              <span class="card__tag">Entrepreneurship</span>
+              <h3>Episode 01 — Coming Soon</h3>
+              <p class="form-note">Ep 01 · Guest TBA · Date TBA</p>
+              <p>The first interviews are being recorded now. Join the newsletter to get episode one the day it drops.</p>
+              <div class="card__actions">
+                <a href="#newsletter" class="btn btn--secondary">Get Notified</a>
+              </div>
+            </div>
+          </article>
+          <article class="card reveal">
+            <div class="card__media"><div class="placeholder-media">Episode thumbnail<br>coming soon</div></div>
+            <div class="card__body">
+              <span class="card__tag">AI &amp; Systems</span>
+              <h3>Episode 02 — Coming Soon</h3>
+              <p class="form-note">Ep 02 · Guest TBA · Date TBA</p>
+              <p>How real operators use AI systems for lead capture, follow-up, and content without adding headcount.</p>
+              <div class="card__actions">
+                <a href="#newsletter" class="btn btn--secondary">Get Notified</a>
+              </div>
+            </div>
+          </article>
+          <article class="card reveal">
+            <div class="card__media"><div class="placeholder-media">Episode thumbnail<br>coming soon</div></div>
+            <div class="card__body">
+              <span class="card__tag">Discipline &amp; Faith</span>
+              <h3>Episode 03 — Coming Soon</h3>
+              <p class="form-note">Ep 03 · Guest TBA · Date TBA</p>
+              <p>Building with a standard: faith, discipline, and leading yourself before you lead a business.</p>
+              <div class="card__actions">
+                <a href="#newsletter" class="btn btn--secondary">Get Notified</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="section__actions section__actions--center">
+          <a href="be-featured.html" class="btn btn--primary">Want to Be a Guest? Apply Here</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="newsletter section" id="newsletter">
+      <div class="container">
+        <span class="eyebrow">The Command Brief</span>
+        <h2>Never Miss an Episode</h2>
+        <p>One email a week with new episodes, takeaways, and business plays. No spam. No filler.</p>
+        <form class="newsletter__form ghl-form" id="newsletterForm" data-ghl-endpoint="" data-msg="newsletterMsg" data-success="You are in. Welcome to the Command Brief." novalidate>
+          <input type="text" name="first_name" placeholder="First name" required autocomplete="given-name">
+          <input type="email" name="email" placeholder="Email address" required autocomplete="email">
+          <button type="submit" class="btn btn--primary">Join Free</button>
+        </form>
+        <p class="form-note">Unsubscribe anytime. We respect the inbox.</p>
+        <p class="form-msg" id="newsletterMsg" role="status"></p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__logo">
+          <img src="assets/logo.png" alt="CXW Command Center logo">
+          <p style="font-size:0.9rem; max-width:280px;">The media arm of the CXW ecosystem. Business, systems, discipline, and faith — with proof.</p>
+        </div>
+        <div>
+          <h4>Site</h4>
+          <ul>
+            <li><a href="episodes.html">Episodes</a></li>
+            <li><a href="guest-spotlight.html">Guests</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="be-featured.html">Be Featured</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Listen</h4>
+          <ul>
+            <!-- TODO: real platform URLs -->
+            <li><a href="#" target="_blank" rel="noopener noreferrer">Spotify</a></li>
+            <li><a href="#" target="_blank" rel="noopener noreferrer">Apple Podcasts</a></li>
+            <li><a href="#" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Connect</h4>
+          <ul>
+            <!-- TODO: real social + contact links -->
+            <li><a href="#" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+            <li><a href="#" target="_blank" rel="noopener noreferrer">X / Twitter</a></li>
+            <li><a href="mailto:crusadexwarrior@gmail.com">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; 2026 CXW Command Center. All rights reserved.</span>
+        <p class="footer__credit">
+          Website designed by <a href="https://crusadexwarrior.com" target="_blank" rel="noopener noreferrer" class="footer__credit-link">CrusadeXWarrior</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

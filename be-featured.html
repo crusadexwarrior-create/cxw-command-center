@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Be a Guest or Partner — CXW Command Center</title>
+  <meta name="description" content="Apply to be featured on CXW Command Center or recommend someone. For entrepreneurs, creators, leaders, and operators building with proof.">
+  <meta property="og:title" content="Be Featured on CXW Command Center">
+  <meta property="og:description" content="Share your story, your systems, your lessons, and the work you are building.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/logo.png">
+  <link rel="icon" type="image/png" href="assets/logo-mark.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="container header__inner">
+      <a href="index.html" class="header__logo" aria-label="CXW Command Center home">
+        <img src="assets/logo.png" alt="CXW Command Center logo">
+      </a>
+      <nav class="nav" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="episodes.html">Episodes</a>
+        <a href="guest-spotlight.html">Guests</a>
+        <a href="blog.html">Blog</a>
+        <a href="about.html">About</a>
+      </nav>
+      <div style="display:flex; gap:10px; align-items:center;">
+        <a href="be-featured.html" class="btn btn--primary header__cta" aria-current="page">Be Featured</a>
+        <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="mobileNav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile">
+      <a href="index.html">Home</a>
+      <a href="episodes.html">Episodes</a>
+      <a href="guest-spotlight.html">Guests</a>
+      <a href="blog.html">Blog</a>
+      <a href="about.html">About</a>
+      <a href="be-featured.html" aria-current="page">Be Featured</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="page-hero">
+      <div class="container">
+        <div class="page-hero__mark"><img src="assets/logo-mark.png" alt="CXW Command Center emblem"></div>
+        <span class="eyebrow">Be Featured</span>
+        <h1>Be Featured on CXW Command Center</h1>
+        <p class="lead">Share your story, your systems, your lessons, and the work you are building.</p>
+        <div class="page-hero__ctas">
+          <a href="#apply" class="btn btn--primary">Apply to Be Featured</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHO THE SHOW IS FOR -->
+    <section class="section">
+      <div class="container">
+        <div class="section__head section__head--center reveal">
+          <span class="eyebrow">Who the Show Is For</span>
+          <h2>Builders With a Story and Proof</h2>
+        </div>
+        <div class="grid-auto">
+          <div class="value reveal">
+            <h3>Entrepreneurs</h3>
+            <p>Founders building something real and willing to show the numbers and the systems behind it.</p>
+          </div>
+          <div class="value reveal">
+            <h3>Local Business Owners</h3>
+            <p>Operators serving their community who have lessons other owners can use this week.</p>
+          </div>
+          <div class="value reveal">
+            <h3>Creators</h3>
+            <p>Content builders turning attention into audience, product, and durable business.</p>
+          </div>
+          <div class="value reveal">
+            <h3>Community Leaders</h3>
+            <p>People building movements, ministries, and local impact with discipline and consistency.</p>
+          </div>
+          <div class="value reveal">
+            <h3>Coaches &amp; Consultants</h3>
+            <p>Experts who package what they know into results for the people they serve.</p>
+          </div>
+          <div class="value reveal">
+            <h3>Operators</h3>
+            <p>Anyone building with discipline, faith, AI, systems, or leadership — and doing the work.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- APPLICATION FORM -->
+    <section class="section" id="apply">
+      <div class="container">
+        <div class="section__head section__head--center reveal">
+          <span class="eyebrow">Application</span>
+          <h2>Apply or Recommend Someone</h2>
+        </div>
+        <!-- GHL: set data-ghl-endpoint to your GoHighLevel form/webhook URL to go live. -->
+        <form class="form ghl-form reveal" id="applyForm" data-ghl-endpoint="" data-msg="applyMsg"
+              data-success="Application received. We'll review the fit and reach out." novalidate>
+          <input type="hidden" name="form_source" value="be-featured">
+          <div class="form__grid">
+            <div class="field">
+              <label for="fullName">Full name <span class="req">*</span></label>
+              <input type="text" id="fullName" name="full_name" required autocomplete="name">
+            </div>
+            <div class="field">
+              <label for="business">Business / organization</label>
+              <input type="text" id="business" name="business" autocomplete="organization">
+            </div>
+            <div class="field">
+              <label for="email">Email <span class="req">*</span></label>
+              <input type="email" id="email" name="email" required autocomplete="email">
+            </div>
+            <div class="field">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" autocomplete="tel">
+            </div>
+            <div class="field">
+              <label for="website">Website</label>
+              <input type="url" id="website" name="website" placeholder="https://" autocomplete="url">
+            </div>
+            <div class="field">
+              <label for="socials">Social media links</label>
+              <input type="text" id="socials" name="socials" placeholder="Instagram, LinkedIn, X…">
+            </div>
+            <div class="field field--full">
+              <label for="applyingAs">Are you applying for yourself or recommending someone else? <span class="req">*</span></label>
+              <select id="applyingAs" name="applying_as" required>
+                <option value="" disabled selected>Choose one</option>
+                <option value="myself">Applying for myself</option>
+                <option value="recommending">Recommending someone else</option>
+              </select>
+            </div>
+            <div class="field field--full">
+              <label for="whatYouDo">What do you do?</label>
+              <textarea id="whatYouDo" name="what_you_do" placeholder="A few sentences on the work."></textarea>
+            </div>
+            <div class="field field--full">
+              <label for="whyValuable">Why would your story be valuable to the CXW Command Center audience? <span class="req">*</span></label>
+              <textarea id="whyValuable" name="why_valuable" required placeholder="What can builders learn from you?"></textarea>
+            </div>
+            <div class="field field--full">
+              <label for="topics">What topics can you speak on?</label>
+              <textarea id="topics" name="topics" placeholder="Entrepreneurship, AI systems, discipline, leadership…"></textarea>
+            </div>
+            <div class="field">
+              <label for="contactMethod">Preferred contact method</label>
+              <select id="contactMethod" name="contact_method">
+                <option value="email" selected>Email</option>
+                <option value="phone">Phone</option>
+                <option value="text">Text</option>
+              </select>
+            </div>
+          </div>
+          <div class="form__actions">
+            <button type="submit" class="btn btn--primary">Submit Application</button>
+            <p class="form-msg" id="applyMsg" role="status"></p>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- WHAT HAPPENS NEXT -->
+    <section class="section">
+      <div class="container">
+        <div class="section__head section__head--center reveal">
+          <span class="eyebrow">What Happens Next</span>
+          <h2>A Simple, Clear Process</h2>
+        </div>
+        <div class="steps reveal">
+          <div class="step">
+            <span class="step__num">1</span>
+            <h3>Submit</h3>
+            <p>Send your application using the form above.</p>
+          </div>
+          <div class="step">
+            <span class="step__num">2</span>
+            <h3>Review</h3>
+            <p>CXW reviews the fit for the audience and the show.</p>
+          </div>
+          <div class="step">
+            <span class="step__num">3</span>
+            <h3>Next Steps</h3>
+            <p>If selected, you receive next steps and details.</p>
+          </div>
+          <div class="step">
+            <span class="step__num">4</span>
+            <h3>Record</h3>
+            <p>The conversation is scheduled and recorded.</p>
+          </div>
+          <div class="step">
+            <span class="step__num">5</span>
+            <h3>Spotlight</h3>
+            <p>After publishing, you may receive spotlight content to share.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="newsletter section" id="newsletter">
+      <div class="container">
+        <span class="eyebrow">The Command Brief</span>
+        <h2>Get the Command Brief</h2>
+        <p>One email a week. Podcast takeaways, AI business plays, and lessons from entrepreneurs who execute. No spam. No filler.</p>
+        <form class="newsletter__form ghl-form" id="newsletterForm" data-ghl-endpoint="" data-msg="newsletterMsg" data-success="You are in. Welcome to the Command Brief." novalidate>
+          <input type="text" name="first_name" placeholder="First name" required autocomplete="given-name">
+          <input type="email" name="email" placeholder="Email address" required autocomplete="email">
+          <button type="submit" class="btn btn--primary">Join Free</button>
+        </form>
+        <p class="form-note">Unsubscribe anytime. We respect the inbox.</p>
+        <p class="form-msg" id="newsletterMsg" role="status"></p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__logo">
+          <img src="assets/logo.png" alt="CXW Command Center logo">
+          <p style="font-size:0.9rem; max-width:280px;">The media arm of the CXW ecosystem. Business, systems, discipline, and faith — with proof.</p>
+        </div>
+        <div>
+          <h4>Site</h4>
+          <ul>
+            <li><a href="episodes.html">Episodes</a></li>
+            <li><a href="guest-spotlight.html">Guests</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="be-featured.html">Be Featured</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Listen</h4>
+          <ul>
+            <!-- TODO: real platform URLs -->
+            <li><a href="#" target="_blank" rel="noopener noreferrer">Spotify</a></li>
+            <li><a href="#" target="_blank" rel="noopener noreferrer">Apple Podcasts</a></li>
+            <li><a href="#" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Connect</h4>
+          <ul>
+            <!-- TODO: real social + contact links -->
+            <li><a href="#" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+            <li><a href="#" target="_blank" rel="noopener noreferrer">X / Twitter</a></li>
+            <li><a href="mailto:crusadexwarrior@gmail.com">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; 2026 CXW Command Center. All rights reserved.</span>
+        <p class="footer__credit">
+          Website designed by <a href="https://crusadexwarrior.com" target="_blank" rel="noopener noreferrer" class="footer__credit-link">CrusadeXWarrior</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

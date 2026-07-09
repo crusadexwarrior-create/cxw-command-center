@@ -1,0 +1,25 @@
+/* CXW Command Center — design tokens (see DESIGN.md) */
+:root {
+  /* Palette */
+  --cn-bg: #0A0C10;
+  --cn-surface: #14181F;
+  --cn-surface-2: #1C222C;
+  --cn-text: #E8ECF2;
+  --cn-text-muted: #8A94A6;
+  --cn-accent: #1E6FFF;
+  --cn-accent-hover: #3D84FF;
+  --cn-line: #2A313D;
+
+  /* Type */
+  --cn-font-head: 'Rajdhani', 'Segoe UI', sans-serif;
+  --cn-font-body: 'Inter', 'Segoe UI', sans-serif;
+
+  /* Spacing */
+  --cn-section-pad: 64px;
+  --cn-container: 1200px;
+  --cn-radius: 6px;
+}
+
+@media (min-width: 768px) {
+  :root { --cn-section-pad: 112px; }
+}
